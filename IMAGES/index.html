@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Phishing Detection Tool</h1>
+        <form id="phishingForm">
+            <label for="url">URL:</label>
+            <input type="text" id="url" name="url" placeholder="Enter the URL to check...">
+
+            <label for="emailContent">Email Content:</label>
+            <textarea id="emailContent" name="emailContent" rows="4" placeholder="Paste the email content to check..."></textarea>
+
+            <button type="button" onclick="checkPhishing()">Check for Phishing</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+
+    <div class="protection-container">
+        <div class="protection-section">
+            <h2>Browser Protection</h2>
+            <div class="info-section">
+                <div class="text">
+                    <p>Our free browser extension helps keep you safe from dangerous websites. It protects you from phishing, fake shops, and harmful scripts.</p>
+                    <p>The extension works with Chrome, Firefox, Edge, and Opera.</p>
+                    <a class="learn-more" onclick="toggleMoreInfo('browserMoreInfo')">Learn More</a>
+                    <div id="browserMoreInfo" class="more-info">
+                        <p>Install our browser extension to stay safe while browsing. It will help you spot phishing attempts and block harmful content.</p>
+                        <p>How to stay safe while browsing:</p>
+                        <ul>
+                            <li>Always check the website address before entering any personal information.</li>
+                            <li>Look for HTTPS in the website address for a secure connection.</li>
+                            <li>Avoid clicking on suspicious links or downloading unknown files.</li>
+                            <li>Keep your browser and extensions updated to the latest version.</li>
+                            <li>Regularly check your browser's security settings.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="IMAGES/PROTECT.jpg" alt="Browser Protection">
+                </div>
+            </div>
+        </div>
+
+        <div class="protection-section">
+            <h2>Mobile Protection</h2>
+            <div class="info-section">
+                <div class="text">
+                    <p>Many phishing attacks are sent by email and SMS. Most people visit phishing sites using their phones.</p>
+                    <p>Some mobile browsers block fewer dangerous sites than desktop browsers. Our app gives your phone the same protection as your computer.</p>
+                    <p>You can also use our app to report suspicious sites and get updates about your report.</p>
+                    <a class="learn-more" onclick="toggleMoreInfo('mobileMoreInfo')">Learn More</a>
+                    <div id="mobileMoreInfo" class="more-info">
+                        <p>Install our app to protect your mobile devices. It offers real-time phishing protection and blocks harmful content, just like on desktop browsers.</p>
+                        <p>How to stay safe on your phone:</p>
+                        <ul>
+                            <li>Don't click on links from unknown sources.</li>
+                            <li>Be careful with messages asking for personal information.</li>
+                            <li>Use our app to make your mobile browser more secure.</li>
+                            <li>Keep your mobile browser and security apps updated.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="IMAGES/MOBILE PROTECTION.jpg" alt="Mobile Protection" width="300" height="auto">
+                </div>
+            </div>
+        </div>
+
+        <div class="protection-section">
+            <h2>Email Protection</h2>
+            <div class="info-section">
+                <div class="text">
+                    <p>Many phishing attacks are sent via email. Our protection tool scans your emails to detect and block phishing attempts.</p>
+                    <p>It works with popular email clients and services to keep your inbox safe.</p>
+                    <a class="learn-more" onclick="toggleMoreInfo('emailMoreInfo')">Learn More</a>
+                    <div id="emailMoreInfo" class="more-info">
+                        <p>Our email protection tool integrates with your email client to scan for phishing attempts. It provides real-time protection and blocks harmful content.</p>
+                        <p>How to stay safe with your email:</p>
+                        <ul>
+                            <li>Be cautious with emails from unknown senders.</li>
+                            <li>Do not click on suspicious links or download attachments from unknown sources.</li>
+                            <li>Enable two-factor authentication for your email accounts.</li>
+                            <li>Regularly update your email client's security settings.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="IMAGES/EMAIL.jpg" alt="Email Protection" width="300" height="auto">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="protection-details">
+        <h2>Protection against a wide range of attacks</h2>
+        <p>Our extensions quickly protect you from many types of attacks, giving you strong security on all devices and browsers.</p>
+        <h3>Types of Protection:</h3>
+        <ul>
+            <li>
+                <img src="IMAGES/Phishings.png" alt="Phishing Icon" width="48" height="48">
+                <span>Phishing Sites:</span> Block access to phishing sites to keep your online accounts safe.
+            </li>
+            <li>
+                <img src="IMAGES/subtitles-slash_16674259.png" alt="Fake Shop Icon" width="48" height="48">
+                <span>Fake Shops:</span> Prevent criminals from using your bank details for fraud.
+            </li>
+            <li>
+                <img src="IMAGES/found_14530062.png" alt="Malicious JavaScript Icon" width="48" height="48">
+                <span>Malicious JavaScript:</span> Stop harmful software from running on your device.
+            </li>
+            <li>
+                <img src="IMAGES/hacker_4800276.png" alt="Cryptojacker Icon" width="48" height="48">
+                <span>Cryptojackers:</span> Block attackers from using your device to mine cryptocurrency.
+            </li>
+        </ul>
+    </div>
+
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaqAnswer('faq1')">
+                <span class="toggle-icon">+</span> What are phishing websites?
+            </div>
+            <div id="faq1" class="faq-answer">
+                <p>Phishing websites are fraudulent sites designed to deceive users into providing sensitive information such as usernames, passwords, or credit card details. They often mimic legitimate sites to trick users into believing they are on a trusted platform.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaqAnswer('faq2')">
+                <span class="toggle-icon">+</span> How do the Netcraft apps and extensions protect me from phishing attacks?
+            </div>
+            <div id="faq2" class="faq-answer">
+                <p>Netcraft apps and extensions protect users by identifying and blocking phishing sites, scanning emails for suspicious content, and providing real-time alerts. They help to ensure that your online activities are secure by preventing access to malicious websites.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaqAnswer('faq3')">
+                <span class="toggle-icon">+</span> What happens when I report a suspicious site?
+            </div>
+            <div id="faq3" class="faq-answer">
+                <p>When you report a suspicious site, the Netcraft team investigates the report and updates their database to protect other users. Your report helps improve the accuracy of phishing detection and contributes to a safer online environment.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaqAnswer('faq4')">
+                <span class="toggle-icon">+</span> Which browsers support Netcraft Extension?
+            </div>
+            <div id="faq4" class="faq-answer">
+                <p>Netcraft extensions are supported by major browsers including Chrome, Firefox, Edge, and Opera. They are designed to integrate seamlessly with these browsers to provide robust phishing protection.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaqAnswer('faq5')">
+                <span class="toggle-icon">+</span> Which third-party apps are supported by the Netcraft App?
+            </div>
+            <div id="faq5" class="faq-answer">
+                <p>The Netcraft app supports integration with a variety of third-party apps, including popular email clients and productivity tools. This allows for comprehensive phishing protection across different platforms and services.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

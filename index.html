@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js">
++
+
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="IMAGES/phishing.jpg" alt="Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="#phishingForm">Home</a></li>
+                <li><a href="#browserProtection">Browser Protection</a></li>
+                <li><a href="#mobileProtection">Mobile Protection</a></li>
+                <li><a href="#protectionDetails">Protection Details</a></li>
+                <li><a href="#faqSection">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="fullscreen-container">
+        <div class="container">
+            <h1>Phishing Detection Tool</h1>
+            <form id="phishingForm">
+                <label for="url">URL:</label>
+                <input type="text" id="url" name="url" placeholder="Enter the URL to check...">
+                <label for="emailContent">Email Content:</label>
+                <textarea id="emailContent" name="emailContent" rows="4" placeholder="Paste the email content to check..."></textarea>
+                <button type="button" onclick="checkPhishing()">Check for Phishing</button>
+            </form>
+            <div id="result" class="result"></div>
+        </div>
+    </div>
+    <div class="protection-container">
+        <div class="protection-section" id="browserProtection">
+            <h2>Browser Protection</h2>
+            <div class="info-section">
+                <div class="text">
+                    <p>Our free browser extension helps keep you safe from dangerous websites. It protects you from phishing, fake shops, and harmful scripts.</p>
+                    <p>The extension works with Chrome, Firefox, Edge, and Opera.</p>
+                    <a class="learn-more" onclick="toggleMoreInfo('browserMoreInfo')">Learn More</a>
+                    <div id="browserMoreInfo" class="more-info">
+                        <p>Install our browser extension to stay safe while browsing. It will help you spot phishing attempts and block harmful content.</p>
+                        <p>How to stay safe while browsing:</p>
+                        <ul>
+                            <li>Always check the website address before entering any personal information.</li>
+                            <li>Look for HTTPS in the website address for a secure connection.</li>
+                            <li>Avoid clicking on suspicious links or downloading unknown files.</li>
+                            <li>Keep your browser and extensions updated to the latest version.</li>
+                            <li>Regularly check your browser's security settings.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="IMAGES/PROTECT.jpg" alt="Browser Protection">
+                </div>
+            </div>
+        </div>
+        <div class="protection-section" id="mobileProtection">
+            <h2>Mobile Protection</h2>
+            <div class="info-section">
+                <div class="text">
+                    <p>Many phishing attacks are sent by email and SMS. Most people visit phishing sites using their phones.</p>
+                    <p>Some mobile browsers block fewer dangerous sites than desktop browsers. Our app gives your phone the same protection as your computer.</p>
+                    <p>You can also use our app to report suspicious sites and get updates about your report.</p>
+                    <a class="learn-more" onclick="toggleMoreInfo('mobileMoreInfo')">Learn More</a>
+                    <div id="mobileMoreInfo" class="more-info">
+                        <p>Install our app to protect your mobile devices. It offers real-time phishing protection and blocks harmful content, just like on your computer.</p>
+                        <p>How to stay safe on your phone:</p>
+                        <ul>
+                            <li>Avoid clicking on suspicious links in emails or text messages.</li>
+                            <li>Download apps only from official app stores.</li>
+                            <li>Keep your mobile operating system and apps updated.</li>
+                            <li>Use a mobile security app for additional protection.</li>
+                            <li>Be cautious of public Wi-Fi networks; use a VPN if necessary.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="IMAGES/MOBILE PROTECTION.jpg" alt="Mobile Protection">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="protection-details" id="protectionDetails">
+        <h2>How We Protect You</h2>
+        <ul>
+            <li><img src="IMAGES/link.webp" alt="Link Protection"><p>Our tool scans URLs for known phishing threats and suspicious patterns.</p></li>
+            <li><img src="IMAGES/scanemail.png" alt="Scan Emails"><p>We analyze email content to detect phishing attempts and alert you to potential threats.</p></li>
+            <li><img src="IMAGES/update.jpeg" alt="Continuous Updates"><p>Our database is constantly updated with the latest phishing threats to keep you protected.</p></li>
+        </ul>
+    </div>
+    <div class="faq-section" id="faqSection">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ('faq1')">What is phishing? <span class="toggle-icon">+</span></div>
+            <div id="faq1" class="faq-answer">
+                <p>Phishing is a type of online scam where attackers try to trick you into providing sensitive information like usernames, passwords, and credit card details by pretending to be a trustworthy entity.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ('faq2')">How can I recognize a phishing email? <span class="toggle-icon">+</span></div>
+            <div id="faq2" class="faq-answer">
+                <p>Phishing emails often have urgent messages, suspicious links, and requests for personal information. Look for poor grammar, spelling errors, and mismatched URLs to identify them.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ('faq3')">What should I do if I receive a phishing email? <span class="toggle-icon">+</span></div>
+            <div id="faq3" class="faq-answer">
+                <p>If you receive a phishing email, do not click on any links or provide any information. Report the email to your email provider and delete it immediately.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ('faq4')">How does your tool detect phishing? <span class="toggle-icon">+</span></div>
+            <div id="faq4" class="faq-answer">
+                <p>Our tool uses a combination of URL analysis, email content scanning, and a constantly updated database of known phishing threats to detect and alert you to potential phishing attempts.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#phishingForm">Home</a></li>
+                    <li><a href="#browserProtection">Browser Protection</a></li>
+                    <li><a href="#mobileProtection">Mobile Protection</a></li>
+                    <li><a href="#protectionDetails">Protection Details</a></li>
+                    <li><a href="#faqSection">FAQ</a></li>
+                    <li><a href="https://www.cisa.gov/phishing" target="_blank">Phishing Information</a></li>
+                    <li><a href="https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams" target="_blank">FTC: Recognize and Avoid Phishing Scams</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Phone: +123 456 7890</p>
+                <p>Email: <a href="mailto:support@example.com">support@example.com</a></p>
+                <p>Location: 123 Example Street, City, Country</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Phishing Detection Tool. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        .faq-item.active .toggle-icon::before {
+            content: "▼";
+        }
+    </style>
+    <script>
+        const exampleData = [
+            {
+                url: 'http://example-phishing-site.com',
+                email: `Dear User,
+
+We have detected unusual activity in your account. Please verify your information by clicking the link below:
+
+http://example-phishing-site.com/verify
+
+Failure to do so may result in account suspension.
+
+Thank you,
+The Security Team`
+            },
+            {
+                url: 'https://another-phishing-site.com',
+                email: `Hello,
+
+Your account has been compromised. Click the link below to reset your password immediately:
+
+https://another-phishing-site.com/reset
+
+Best,
+Support Team`
+            },
+            {
+                url: 'http://fake-bank-site.com',
+                email: `Dear Customer,
+
+We need you to confirm your banking information. Click here to proceed:
+
+http://fake-bank-site.com/confirm
+
+Regards,
+Your Bank`
+            },
+            {
+                url: 'https://secure-phishing-site.com',
+                email: `Attention,
+
+We have noticed unusual login attempts on your account. Verify your account by clicking the link below:
+
+https://secure-phishing-site.com/login
+
+Thanks,
+Security Team`
+            }
+            // Add more examples as needed
+        ];
+
+        let currentIndex = 0;
+        const totalCycles = 20;
+        let cycleCount = 0;
+
+        function populateExampleData() {
+            document.getElementById('url').value = exampleData[currentIndex].url;
+            document.getElementById('emailContent').value = exampleData[currentIndex].email;
+
+            currentIndex = (currentIndex + 1) % exampleData.length;
+            cycleCount++;
+
+            if (cycleCount < totalCycles) {
+                setTimeout(populateExampleData, 3000); // Change every 3 seconds
+            }
+        }
+
+        function checkPhishing() {
+            const url = document.getElementById('url').value;
+            const emailContent = document.getElementById('emailContent').value;
+            const resultElement = document.getElementById('result');
+            const messageDiv = document.getElementById('message');
+
+            if (emailContent.trim() === "") {
+                alert('Error: Email content is required.');
+                messageDiv.textContent = 'Error: Email content is required.';
+                messageDiv.style.color = 'red';
+                resultElement.textContent = ''; // Clear previous results if any
+                return;
+            }
+
+            let message = 'Phishing check completed:\n';
+            if (url.toLowerCase().includes('phishing')) {
+                message += `The URL "${url}" is potentially a phishing site.\n`;
+            } else {
+                message += `The URL "${url}" appears to be safe.\n`;
+            }
+
+            if (emailContent.toLowerCase().includes('suspicious')) {
+                message += 'The email content appears to contain suspicious elements.\n';
+            } else {
+                message += 'The email content appears to be safe.\n';
+            }
+
+            resultElement.textContent = message;
+            messageDiv.textContent = 'Checking for phishing...';
+            messageDiv.style.color = 'green';
+
+            alert('Message sent! Check the result for details.');
+        }
+
+        function toggleMoreInfo(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
+        }
+
+        function toggleFAQ(id) {
+            const answer = document.getElementById(id);
+            const icon = document.querySelector('.faq-item.active .toggle-icon');
+
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                document.querySelector('#' + id).parentElement.classList.remove('active');
+            } else {
+                answer.style.display = 'block';
+                document.querySelectorAll('.faq-answer').forEach(function(item) {
+                    item.style.display = 'none';
+                });
+                document.querySelectorAll('.faq-item').forEach(function(item) {
+                    item.classList.remove('active');
+                });
+                answer.style.display = 'block';
+                document.querySelector('#' + id).parentElement.classList.add('active');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const moreInfoSections = document.querySelectorAll('.more-info');
+            moreInfoSections.forEach(section => section.style.display = 'none');
+
+            const faqAnswers = document.querySelectorAll('.faq-answer');
+            faqAnswers.forEach(answer => answer.style.display = 'none');
+        });
+
+        window.onload = populateExampleData;
+    </script>
+</body>
+</html>
+
+
+
